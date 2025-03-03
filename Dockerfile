@@ -1,3 +1,3 @@
 FROM openjdk:11
-COPY target/*.jar insuare_app.jar
+COPY target/*.jar insure_app.jar
 ENTRYPOINT ["java","-jar","insure_app.jar"]
