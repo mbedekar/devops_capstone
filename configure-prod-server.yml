@@ -12,6 +12,11 @@
     docker_container:
       name: insureme_prod
       state: stopped
+  
+  - name: remove docker container
+    docker_container:
+      name: insureme_prod
+      state: absent
 
   - name: start docker service
     command: sudo systemctl start docker
