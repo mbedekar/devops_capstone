@@ -8,8 +8,13 @@
   - name: install docker
     command: sudo apt install -y docker.io
 
+  - name: stop docker service
+    docker_container:
+      name: insureme_prod
+      state: stopped
+
   - name: start docker service
     command: sudo systemctl start docker
 
   - name: deploy insureme application
-    command: sudo docker run -itd -p 8081:8081 mandarbedekar/insure-me:2.0
+    command: sudo docker run -itd -p 8081:8081 --name insureme_prod mandarbedekar/insure-me:2.0
