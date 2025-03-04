@@ -8,11 +8,6 @@
   - name: install docker
     command: sudo apt install -y docker.io
 
-  - name: stop docker service
-    docker_container:
-      name: insureme_test
-      state: stopped
-
   - name: start docker service
     command: sudo systemctl start docker
 
